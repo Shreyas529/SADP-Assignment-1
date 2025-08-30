@@ -25,9 +25,9 @@ class JEE_truefalse_eval: public Question
     string evaluate(string response);
 };
 
-// class JEE_multicorrect_eval: public Question
-// {
-//     string evaluate(string response);
-// };
+class JEE_multicorrect_eval: public Question
+{
+    string evaluate(string response);
+};
 
 #endif

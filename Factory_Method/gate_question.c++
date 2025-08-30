@@ -26,8 +26,8 @@ string GATE_truefalse_eval::evaluate(string response)
     return out;
 }
 
-// string GATE_multicorrect_eval::evaluate(string response)
-// {
-//     string out = "Evaluated "+response+" as per GATE Multiple Correct Answers question";
-//     return out;
-// }
+string GATE_multicorrect_eval::evaluate(string response)
+{
+    string out = "Evaluated "+response+" as per GATE Multiple Correct Answers question";
+    return out;
+}

@@ -26,8 +26,8 @@ string JEE_truefalse_eval::evaluate(string response)
     return out;
 }
 
-// string JEE_multicorrect_eval::evaluate(string response)
-// {
-//     string out = "Evaluated "+response+" as per JEE Main Multiple Correct Answers question";
-//     return out;
-// }
+string JEE_multicorrect_eval::evaluate(string response)
+{
+    string out = "Evaluated "+response+" as per JEE Main Multiple Correct Answers question";
+    return out;
+}

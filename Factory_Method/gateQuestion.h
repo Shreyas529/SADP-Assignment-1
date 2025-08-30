@@ -25,8 +25,8 @@ class GATE_truefalse_eval: public Question
     string evaluate(string response);
 };
 
-// class GATE_multicorrect_eval: public Question
-// {
-//     string evaluate(string response);
-// };
+class GATE_multicorrect_eval: public Question
+{
+    string evaluate(string response);
+};
 #endif
