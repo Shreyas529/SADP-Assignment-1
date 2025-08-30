@@ -15,3 +15,7 @@ Question* GATE_Factory::createTrueFalseQuestion() {
 Question* GATE_Factory::createFillInQuestion() {
     return new GATEFillInQuestion();
 }
+
+Question* GATE_Factory::createMultiCorrectQuestion() {
+    return new GateMultiCorrect();
+}

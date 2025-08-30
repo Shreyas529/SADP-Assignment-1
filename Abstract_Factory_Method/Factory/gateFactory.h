@@ -6,6 +6,7 @@
 #include "../Question/GATEQuestions/gate_numerical.h"
 #include "../Question/GATEQuestions/gate_truefalse.h"
 #include "../Question/GATEQuestions/gate_fillin.h"
+#include "../Question/GATEQuestions/gate_multiCorrect.h"
 
 class GATE_Factory : public ExamFactory {
 public:
@@ -13,6 +14,7 @@ public:
     Question* createNumericalQuestion() override;
     Question* createTrueFalseQuestion() override;
     Question* createFillInQuestion() override;
+    Question* createMultiCorrectQuestion() override;
 };
 
 #endif // GATE_FACTORY_H

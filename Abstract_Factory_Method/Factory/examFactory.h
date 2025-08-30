@@ -7,6 +7,7 @@ public:
     virtual Question* createNumericalQuestion() = 0;
     virtual Question* createTrueFalseQuestion() = 0;
     virtual Question* createFillInQuestion() = 0;
+    virtual Question* createMultiCorrectQuestion() = 0;
 };
 
 #endif // EXAM_FACTORY_H

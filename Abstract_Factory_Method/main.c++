@@ -7,12 +7,14 @@ void createQuestions(ExamFactory* factory) {
     Question* numerical = factory->createNumericalQuestion();
     Question* trueFalse = factory->createTrueFalseQuestion();
     Question* fillIn = factory->createFillInQuestion();
+    Question* multiCorrect = factory->createMultiCorrectQuestion();
 
     string studentAnswer = "Sample Answer";
     cout << mcq->evaluate(studentAnswer) << endl;
     cout << numerical->evaluate(studentAnswer) << endl;
     cout << trueFalse->evaluate(studentAnswer) << endl;
     cout << fillIn->evaluate(studentAnswer) << endl;
+    cout << multiCorrect->evaluate(studentAnswer) << endl;
 }
 
 int main() {
