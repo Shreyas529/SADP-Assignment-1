@@ -13,11 +13,6 @@ void createQuestions(ExamFactory* factory) {
     cout << numerical->evaluate(studentAnswer) << endl;
     cout << trueFalse->evaluate(studentAnswer) << endl;
     cout << fillIn->evaluate(studentAnswer) << endl;
-
-    delete mcq;
-    delete numerical;
-    delete trueFalse;
-    delete fillIn;
 }
 
 int main() {
@@ -27,9 +22,5 @@ int main() {
     createQuestions(gateFactory);
 
     createQuestions(jeeFactory);
-
-    delete gateFactory;
-    delete jeeFactory;
-
     return 0;
 }
