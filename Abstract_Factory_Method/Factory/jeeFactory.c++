@@ -15,7 +15,3 @@ Question* JEE_Factory::createTrueFalseQuestion() {
 Question* JEE_Factory::createFillInQuestion() {
     return new JEEFillInQuestion();
 }
-
-Question* JEE_Factory::createMultiCorrectQuestion() {
-    return new JeeMultiCorrect();
-}
