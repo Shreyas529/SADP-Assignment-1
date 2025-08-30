@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cassert>
 
 using namespace std;
 
@@ -30,9 +31,23 @@ int main()
     factories.push_back(new GATE_truefalse_Factory());
     factories.push_back(new GATE_fillin_Factory());
 
+    vector<string> expectedPrints = {
+        "Evaluated Sample_Response as per JEE Main MCQ question",
+        "Evaluated Sample_Response as per JEE Main Numerical question",
+        "Evaluated Sample_Response as per JEE Main True/False question",
+        "Evaluated Sample_Response as per JEE Main Fill-in-the-blank question",
+        "Evaluated Sample_Response as per GATE MCQ question",
+        "Evaluated Sample_Response as per GATE Numerical question",
+        "Evaluated Sample_Response as per GATE True/False question",
+        "Evaluated Sample_Response as per GATE Fill-in-the-blank question"
+    };
+
     string response = "Sample_Response";
-    for (auto factory : factories) {
-        cout << factory->createQuestion()->evaluate(response) << endl;
+
+    for(int i = 0; i < factories.size(); i++) {
+        //Assert that the output matches the expected print
+        assert(factories[i]->createQuestion()->evaluate(response) == expectedPrints[i]);
+        cout << factories[i]->createQuestion()->evaluate(response) << endl;
     }
 
     return 0;
