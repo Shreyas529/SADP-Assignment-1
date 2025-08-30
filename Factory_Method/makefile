@@ -5,13 +5,13 @@ CXXFLAGS = -std=c++17 -Wall -Wextra
 # Target binary name
 TARGET = examApp
 
-# Find all .cpp files in project
-SRC = $(wildcard *.cpp \
-             gate_factory/*.cpp \
-             jee_factory/*.cpp)
+# Find all .c++ files in project
+SRC = $(wildcard *.c++ \
+                gate_factory/*.c++ \
+                jee_factory/*.c++)
 
 # Generate object files list
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:.c++=.o)
 
 # Default target
 all: $(TARGET)
@@ -21,8 +21,8 @@ $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(TARGET)
 	@echo "✅ Build complete: $(TARGET)"
 
-# Compile .cpp to .o
-%.o: %.cpp
+# Compile .c++ to .o
+%.o: %.c++
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	@echo "🔨 Compiled: $<"
 
