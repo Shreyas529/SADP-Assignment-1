@@ -1,0 +1,12 @@
+#ifndef QUESTION_H
+#define QUESTION_H
+
+#include <string>
+using namespace std;
+
+class Question {
+public: 
+    virtual string evaluate(string response) = 0;
+};
+
+#endif // QUESTION_H
