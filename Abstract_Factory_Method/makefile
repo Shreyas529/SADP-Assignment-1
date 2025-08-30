@@ -8,10 +8,8 @@ TARGET = examApp
 # Find all .c++ files in project
 SRC = $(wildcard *.c++ \
                 Factory/*.c++ \
-                Question/JEEQuestions/*.c++ \
-				Question/GATEQuestions/*.c++ \
-				Question/QuestionTypes/*.c++ )
-
+                Question/*/*.c++ \
+		)
 # Generate object files list
 OBJ = $(SRC:.c++=.o)
 

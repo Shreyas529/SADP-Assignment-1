@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Factory/gateFactory.h"
 #include "Factory/jeeFactory.h"
+#include "Factory/neetFactory.h"
 
 void createQuestions(ExamFactory* factory) {
     Question* mcq = factory->createMCQQuestion();
@@ -18,9 +19,13 @@ void createQuestions(ExamFactory* factory) {
 int main() {
     ExamFactory* gateFactory = new GATE_Factory();
     ExamFactory* jeeFactory = new JEE_Factory();
+    ExamFactory* neetFactory = new NEET_Factory();
 
     createQuestions(gateFactory);
 
     createQuestions(jeeFactory);
+
+    createQuestions(neetFactory);
+
     return 0;
 }
