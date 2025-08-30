@@ -1,7 +1,7 @@
 #ifndef TRUEFALSEQUESTION_H
 #define TRUEFALSEQUESTION_H
 
-#include "question.h"
+#include "../question.h"
 
 class TrueFalseQuestion : public Question {
 public:

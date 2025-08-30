@@ -1,7 +1,7 @@
 #ifndef MCQQUESTION_H
 #define MCQQUESTION_H
 
-#include "question.h"
+#include "../question.h"
 
 class MCQQuestion : public Question {
 public:

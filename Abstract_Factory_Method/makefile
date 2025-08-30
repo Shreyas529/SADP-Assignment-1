@@ -1,35 +1,37 @@
-# Makefile for Abstract Factory Method implementation
-# Directories
-SRC_DIR = .
-FACTORY_DIR = Factory
-QUESTION_DIR = Question
-GATE_QUESTIONS_DIR = $(QUESTION_DIR)/GATEQuestions
-JEE_QUESTIONS_DIR = $(QUESTION_DIR)/JEEQuestions
-QUESTION_TYPES_DIR = $(QUESTION_DIR)/QuestionTypes
-
-
-# Source files (using wildcards)
-SRCS = *.c++ $(FACTORY_DIR)/*.c++ $(QUESTION_DIR)/GATEQuestions/*.c++ $(QUESTION_DIR)/JEEQuestions/*.c++
-
-# Object files
-OBJS = $(SRCS:.c++=.o)
-
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -I$(FACTORY_DIR) -I$(QUESTION_DIR) -I$(GATE_QUESTIONS_DIR) -I$(JEE_QUESTIONS_DIR) -I$(QUESTION_TYPES_DIR)
+CXXFLAGS = -std=c++17 -Wall -Wextra
 
-# Executable
-TARGET = abstract_factory_app
+# Target binary name
+TARGET = examApp
 
+# Find all .c++ files in project
+SRC = $(wildcard *.c++ \
+                Factory/*.c++ \
+                Question/JEEQuestions/*.c++ \
+				Question/GATEQuestions/*.c++ \
+				Question/QuestionTypes/*.c++ )
+
+# Generate object files list
+OBJ = $(SRC:.c++=.o)
+
+# Default target
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+# Link the program
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(TARGET)
+	@echo "✅ Build complete: $(TARGET)"
 
+# Compile .c++ to .o
 %.o: %.c++
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo "🔨 Compiled: $<"
 
+# Clean build artifacts
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJ) $(TARGET)
+	@echo "🧹 Cleaned!"
 
-.PHONY: all clean
+# Rebuild everything
+rebuild: clean all

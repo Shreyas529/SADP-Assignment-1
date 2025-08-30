@@ -1,7 +1,7 @@
 #ifndef FILLINQUESTION_H
 #define FILLINQUESTION_H
 
-#include "question.h"
+#include "../question.h"
 
 class FillInQuestion : public Question {
 public:

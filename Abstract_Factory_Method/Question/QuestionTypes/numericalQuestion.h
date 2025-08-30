@@ -1,7 +1,7 @@
 #ifndef NUMERICALQUESTION_H
 #define NUMERICALQUESTION_H
 
-#include "question.h"
+#include "../question.h"
 
 class NumericalQuestion : public Question {
 public:
