@@ -1,3 +1,13 @@
+# Build Google Test unit test executable for all GATE and JEE question types
+test_all: test_all.o \
+	gate_factory/gate_mcq.o gate_factory/gate_fillin.o gate_factory/gate_numerical.o gate_factory/gate_truefalse.o \
+	jee_factory/jee_mcq.o jee_factory/jee_fillin.o jee_factory/jee_numerical.o jee_factory/jee_truefalse.o \
+	gate_question.o jee_question.o
+	$(CXX) $(CXXFLAGS) $^ -o test_all -lgtest -lgtest_main -pthread
+
+# Run all tests
+run_test_all: test_all
+	./test_all
 # Compiler and flags
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra
